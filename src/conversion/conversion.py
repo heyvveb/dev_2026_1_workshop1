@@ -181,10 +181,10 @@ class Conversion:
             (5, "V"),
             (1, "I")
         ]
-        for valor, simbolo in valores:
-            for letra in romano:
+        for letra in romano:
+            for valor, simbolo in valores:
                 if letra == simbolo:
-                    if valor > decimal and decimal != 0:
+                    if valor > decimal and decimal > 0:
                         decimal=valor-decimal
                     else:
                         decimal =+ valor
@@ -206,6 +206,53 @@ class Conversion:
             texto_a_morse("SOS") -> "... --- ..."
             texto_a_morse("HELLO") -> ".... . .-.. .-.. ---"
         """
+        Morse={
+            "A": ".-",
+            "B": "-...",
+            "C": "-.-.",
+            "D": "-..",
+            "E": ".",
+            "F": "..-.",
+            "G": "--.",
+            "H": "....",
+            "I": "..",
+            "J": ".---",
+            "K": "-.-",
+            "L": ".-..",
+            "M": "--",
+            "N": "-.",
+            "O": "---",
+            "P": ".--.",
+            "Q": "--.-",
+            "R": ".-.",
+            "S": "...",
+            "T": "-",
+            "U": "..-",
+            "V": "...-",
+            "W": ".--",
+            "X": "-..-",
+            "Y": "-.--",
+            "Z": "--..",
+
+            # Números
+            "0": "-----",
+            "1": ".----",
+            "2": "..---",
+            "3": "...--",
+            "4": "....-",
+            "5": ".....",
+            "6": "-....",
+            "7": "--...",
+            "8": "---..",
+            "9": "----.",
+        }
+        codigo_morse=""
+        for valor in texto:
+            for letra, codigo in Morse:
+                if letra== valor:
+                    codigo_morse+=(codigo+" ")
+
+        return codigo_morse
         pass
     
     def morse_a_texto(self, morse):
