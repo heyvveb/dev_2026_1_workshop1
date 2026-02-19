@@ -172,6 +172,24 @@ class Conversion:
             romano_a_decimal("IX") -> 9
             romano_a_decimal("MCMXCIV") -> 1994
         """
+        valores =[
+            (1000, "M"),
+            (500, "D"),
+            (100, "C"),
+            (50, "L"),
+            (10, "X"),
+            (5, "V"),
+            (1, "I")
+        ]
+        for valor, simbolo in valores:
+            for letra in romano:
+                if letra == simbolo:
+                    if valor > decimal and decimal != 0:
+                        decimal=valor-decimal
+                    else:
+                        decimal =+ valor
+
+        return decimal        
         pass
     
     def texto_a_morse(self, texto):
