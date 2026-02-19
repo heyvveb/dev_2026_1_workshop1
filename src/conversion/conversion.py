@@ -113,6 +113,11 @@ class Conversion:
             binario_a_decimal("1010") -> 10
             binario_a_decimal("11111111") -> 255
         """
+        decimal=0
+        potencia=0
+        for digito in reversed(binario):
+            decimal += int(digito) * (2 ** potencia)
+            potencia += 1
         pass
     
     def decimal_a_romano(self, numero):
