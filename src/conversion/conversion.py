@@ -247,12 +247,12 @@ class Conversion:
             "9": "----.",
         }
         codigo_morse=""
-        for valor in texto:
-            for letra, codigo in Morse:
-                if letra== valor:
+        for valor in texto.upper():
+            for letra, codigo in Morse.items():
+                if letra == valor:
                     codigo_morse+=(codigo+" ")
 
-        return codigo_morse
+        return codigo_morse.strip()
         pass
     
     def morse_a_texto(self, morse):
