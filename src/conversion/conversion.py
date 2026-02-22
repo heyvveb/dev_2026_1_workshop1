@@ -312,7 +312,8 @@ class Conversion:
         texto=""
         letras=morse.split(" ")
         for codigo in letras:
-            if codigo in morse:
-                texto += Morse[codigo]
+            for letra,valor in morse.items():
+                if valor == codigo:
+                    texto += Morse[codigo]
         return texto.upper
         pass
