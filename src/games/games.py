@@ -102,8 +102,9 @@ class Games:
             generar_combinacion_mastermind(4, ["rojo", "azul", "verde"]) 
             -> ["rojo", "azul", "rojo", "verde"]
         """
+        if not hasattr(self, "contador"):
+            self.contador = 0
         combinacion=[]
-        self.contador=0
         for i in range(longitud):
             combinacion.append(colores_disponibles[(i+self.contador)%len(colores_disponibles)])
         self.contador+=1
