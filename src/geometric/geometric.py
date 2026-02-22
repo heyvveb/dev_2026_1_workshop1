@@ -43,7 +43,7 @@ class Geometria:
         Returns:
             float: Área del círculo
         """
-        return (radio**2)*3.14
+        return (radio**2)*3.1416
         pass
     
     def perimetro_circulo(self, radio):
@@ -56,7 +56,7 @@ class Geometria:
         Returns:
             float: Perímetro del círculo
         """
-        return 2*3.14*radio
+        return 2*3.1416*radio
         pass
     
     def area_triangulo(self, base, altura):
@@ -226,7 +226,7 @@ class Geometria:
         Returns:
             float: Volumen de la esfera
         """
-        return (4/3)*3.14*(radio**3)
+        return (4/3)*3.1416*(radio**3)
         pass
     
     def area_superficie_esfera(self, radio):
@@ -239,7 +239,7 @@ class Geometria:
         Returns:
             float: Área de la superficie de la esfera
         """
-        return 4*3.14*(radio**2)
+        return 4*3.1416*(radio**2)
         pass
     
     def volumen_cilindro(self, radio, altura):
@@ -253,7 +253,7 @@ class Geometria:
         Returns:
             float: Volumen del cilindro
         """
-        return 3.14*(radio**2)*altura
+        return 3.1416*(radio**2)*altura
         pass
     
     def area_superficie_cilindro(self, radio, altura):
@@ -267,7 +267,7 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        return (2*3.14*radio*altura)+(2*3.14*(radio**2))
+        return (2*3.1416*radio*altura)+(2*3.1416*(radio**2))
         pass
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
