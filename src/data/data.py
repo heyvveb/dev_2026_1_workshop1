@@ -58,7 +58,7 @@ class Data:
         for i in range(len(lista)):
             c=0
             for j in range(len(n)):
-                if lista[i]==n[j]:
+                if lista[i]==n[j] and type(lista[i]) == type(n[j]):
                     c+=1
             if c==0:
                 n.append(lista[i])
