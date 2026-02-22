@@ -15,6 +15,15 @@ class Games:
             - Tijera vence a papel
             - Papel vence a piedra
         """
+        if jugador1==jugador2:
+            return "empate"
+        if ((jugador1=="piedra" and jugador2=="tijera") or 
+            (jugador1=="tijera" and jugador2=="papel") or 
+            (jugador1=="papel" and jugador2=="piedra")):
+            return jugador1  
+        else:
+            return jugador2
+
         pass
     
     def adivinar_numero_pista(self, numero_secreto, intento):
@@ -28,6 +37,12 @@ class Games:
         Returns:
             str: "correcto", "muy alto" o "muy bajo"
         """
+        if numero_secreto==intento:
+            return "correto" 
+        if numero_secreto>intento:
+            return "muy bajo"
+        else:
+            return "muy alto"
         pass
     
     def ta_te_ti_ganador(self, tablero):
@@ -45,6 +60,27 @@ class Games:
              ["O", "O", " "],
              [" ", " ", " "]] -> "X"
         """
+
+        for i in range(3):
+            if tablero[i][0] == tablero[i][1] == tablero[i][2] != " ":
+                return tablero[i][0]
+
+        for i in range(3):
+            if tablero[0][i] == tablero[1][i] == tablero[2][i] != " ":
+                return tablero[0][i]
+
+        if tablero[0][0] == tablero[1][1] == tablero[2][2] != " ":
+            return tablero[0][0]
+
+        if tablero[0][2] == tablero[1][1] == tablero[2][0] != " ":
+            return tablero[0][2]
+
+        for fila in tablero:
+            if " " in fila:
+                return "continua"
+
+        return "empate"
+
         pass
     
     def generar_combinacion_mastermind(self, longitud, colores_disponibles):
@@ -62,6 +98,10 @@ class Games:
             generar_combinacion_mastermind(4, ["rojo", "azul", "verde"]) 
             -> ["rojo", "azul", "rojo", "verde"]
         """
+        combinacion=[]
+        for i in range(longitud):
+            combinacion.append(colores_disponibles[i])
+        return combinacion
         pass
     
     def validar_movimiento_torre_ajedrez(self, desde_fila, desde_col, hasta_fila, hasta_col, tablero):
@@ -82,4 +122,26 @@ class Games:
             - La torre se mueve horizontal o verticalmente
             - No puede saltar sobre otras piezas
         """
+        if desde_fila != hasta_fila and desde_col!=hasta_col:
+            return False
+        
+        if desde_fila==hasta_fila:
+            if hasta_col>desde_col:
+                paso=1
+            else:
+                paso=-1
+            for col in range(desde_col+paso,hasta_col,paso):
+                if tablero[desde_fila][col] != " ":
+                    return False
+
+        if desde_col ==hasta_col:
+            if hasta_fila>desde_fila:
+                paso=1
+            else:
+                paso=-1
+            for fila in range(desde_fila+paso,hasta_fila,paso):
+                if tablero[fila][desde_col] != " ":
+                    return False
+                
+        return True
         pass
