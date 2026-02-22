@@ -77,6 +77,8 @@ class Data:
             list: Lista combinada y ordenada
         """
         n=[]
+        i=0
+        j=0
         while i < len(lista1) and j < len(lista2):
             if lista1[i] <= lista2[j]:
                 n.append(lista1[i])
