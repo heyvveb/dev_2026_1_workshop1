@@ -15,9 +15,10 @@ class Games:
             - Tijera vence a papel
             - Papel vence a piedra
         """
+        opciones=["piedra","papel","tijera"]
         jugador1=jugador1.lower()
         jugador2=jugador2.lower()
-        if (jugador1 != ("piedra"or"papel"or"tijera")) or (jugador2 != ("piedra"or"papel"or"tijera")):
+        if jugador1 not in opciones or jugador2 not in opciones:
             return "invalid"
         if jugador1==jugador2:
             return "empate"
