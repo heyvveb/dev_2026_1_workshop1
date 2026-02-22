@@ -124,6 +124,7 @@ class Data:
         Returns:
             int: El número que falta en la secuencia
         """
+        lista.sort()
         for i in range(len(lista)-1):
             if (lista[i+1]-lista[i])!=1:
                 return 1+lista[i]
