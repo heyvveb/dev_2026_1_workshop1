@@ -43,6 +43,8 @@ class Geometria:
         Returns:
             float: Área del círculo
         """
+        if radio <0:
+            return 0
         return (radio**2)*3.1416
         pass
     
