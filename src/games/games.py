@@ -42,7 +42,7 @@ class Games:
             str: "correcto", "muy alto" o "muy bajo"
         """
         if numero_secreto==intento:
-            return "correto" 
+            return "correcto" 
         if numero_secreto>intento:
             return "muy bajo"
         else:
