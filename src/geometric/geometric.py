@@ -149,7 +149,7 @@ class Geometria:
         Returns:
             float: Área del pentágono regular
         """
-        return ((lado*5)+apotema)/2
+        return ((lado*5)*apotema)/2
         pass
     
     def perimetro_pentagono_regular(self, lado):
