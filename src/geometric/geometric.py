@@ -344,7 +344,7 @@ class Geometria:
             tuple: Coeficientes (A, B, C) de la ecuación de la recta
         """
         A=x1-x2
-        B=y2-y1
+        B=y1-y2
         C= x1*y2 - x2*y1
         return(A,B,C)
         pass
