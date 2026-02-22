@@ -20,9 +20,9 @@ class Games:
         if ((jugador1=="piedra" and jugador2=="tijera") or 
             (jugador1=="tijera" and jugador2=="papel") or 
             (jugador1=="papel" and jugador2=="piedra")):
-            return jugador1  
+            return "jugador1"  
         else:
-            return jugador2
+            return "jugador2"
 
         pass
     
