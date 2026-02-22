@@ -124,10 +124,12 @@ class Data:
         Returns:
             int: El número que falta en la secuencia
         """
-        for i in range(len(lista)):
-            if lista[i+1]-lista[i]!=1:
+        for i in range(len(lista)-1):
+            if (lista[i+1]-lista[i])!=1:
                 return 1+lista[i]
-        return 1+lista[len(lista)-1]
+        if lista[0] !=1:
+            return 1
+        return lista[-1] + 1
         pass
     
     def es_subconjunto(self, conjunto1, conjunto2):
