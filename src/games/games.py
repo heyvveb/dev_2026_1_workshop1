@@ -103,8 +103,9 @@ class Games:
             -> ["rojo", "azul", "rojo", "verde"]
         """
         combinacion=[]
+        self.contador=0
         for i in range(longitud):
-            combinacion.append(colores_disponibles[(i+2)%len(colores_disponibles)])
+            combinacion.append(colores_disponibles[(i+self.contador)%len(colores_disponibles)])
         return combinacion
         pass
     
