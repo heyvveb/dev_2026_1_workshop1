@@ -202,6 +202,8 @@ class Geometria:
         Returns:
             float: Volumen del cubo
         """
+        if lado<0:
+            return 0
         return lado**3
         pass
     
