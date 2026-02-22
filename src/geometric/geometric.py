@@ -348,6 +348,28 @@ class Geometria:
         C= x1*y2 - x2*y1
         if A < 0 or (A == 0 and B < 0):
             A, B, C = -A, -B, -C
+        if A != 0:
+            if B % A == 0:
+                B = B // A 
+            else:
+                B = B / A
+             
+            if C % A == 0:
+                C = C // A
+            else: 
+                C= C / A
+             
+            if A != 0:
+                A = 1
+            else:
+                A=0
+        elif B != 0:
+            
+            if C % B == 0:
+                C = C // B
+            else:
+                C=C / B
+            B = 1
         return(A,B,C)
     
         pass
