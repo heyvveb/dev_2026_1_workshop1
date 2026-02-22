@@ -106,7 +106,9 @@ class Games:
         self.contador=0
         for i in range(longitud):
             combinacion.append(colores_disponibles[(i+self.contador)%len(colores_disponibles)])
+        self.contador+=1
         return combinacion
+    
         pass
     
     def validar_movimiento_torre_ajedrez(self, desde_fila, desde_col, hasta_fila, hasta_col, tablero):
