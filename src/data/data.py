@@ -220,6 +220,9 @@ class Data:
         Returns:
             list: Matriz transpuesta
         """
+        if len(matriz)==0:
+            return matriz
+        
         filas= len (matriz)
         columnas= len(matriz[0])
         t=[]
