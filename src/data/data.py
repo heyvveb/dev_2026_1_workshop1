@@ -197,7 +197,7 @@ class Data:
         def dequeue():
             if len(cola)==0:
                 return None
-            return cola.dequeue()
+            return cola.pop(0)
         def peek():
             return cola[0]
         def is_empty():
