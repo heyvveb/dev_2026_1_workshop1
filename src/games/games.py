@@ -104,7 +104,7 @@ class Games:
         """
         combinacion=[]
         for i in range(longitud):
-            combinacion.append(colores_disponibles[i%len(colores_disponibles)])
+            combinacion.append(colores_disponibles[(i+2)%len(colores_disponibles)])
         return combinacion
         pass
     
