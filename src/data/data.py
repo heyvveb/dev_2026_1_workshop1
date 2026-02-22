@@ -147,7 +147,7 @@ class Data:
         c=0
         for i in range(len(conjunto2)):
             for j in range(len(conjunto1)):
-                if conjunto1[j]==[conjunto2[i]]:
+                if conjunto1[j]==conjunto2[i]:
                     c+=1
         if c==len(conjunto1):
             return True
