@@ -83,7 +83,7 @@ class Data:
             if lista1[i] <= lista2[j]:
                 n.append(lista1[i])
                 i += 1
-        else:
+            else:
                 n.append(lista2[j])
                 j += 1
         while i < len(lista1):
