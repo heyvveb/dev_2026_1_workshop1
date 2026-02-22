@@ -60,7 +60,7 @@ class Data:
             for j in range(len(n)):
                 if lista[i]==n[j]:
                     c+=1
-            if c==1:
+            if c==0:
                 n.append(lista[i])
         return n
         pass
