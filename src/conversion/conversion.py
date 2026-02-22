@@ -315,5 +315,5 @@ class Conversion:
             for letra,valor in Morse.items():
                 if valor == codigo:
                     texto += letra
-        return texto.upper
+        return texto.upper()
         pass
