@@ -55,13 +55,13 @@ class Data:
             list: Lista sin elementos duplicados
         """
         n=[]
-        for n in range(len(lista)):
+        for i in range(len(lista)):
             c=0
             for j in range(len(n)):
-                if lista[n]==n[j]:
+                if lista[i]==n[j]:
                     c+=1
             if c==1:
-                n.append(lista[n])
+                n.append(lista[i])
         return n
         pass
     
