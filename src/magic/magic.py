@@ -145,7 +145,7 @@ class Magic:
         fac=0
         if n==0:
             return 1
-        for i in range(n-1):
+        for i in range(1,n):
             fac=i*(i+1)
         return fac
         pass
@@ -248,7 +248,7 @@ class Magic:
             if sum(matriz[i][i])!=numero:
                 return False
         for i in range(n):
-            sum(matriz[i][n-1-i])!=numero
-            return False
+            if sum(matriz[i][n-1-i])!=numero:
+                return False
         return True
         pass
