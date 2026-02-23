@@ -103,6 +103,9 @@ class Magic:
         Returns:
             bool: True si n es un número perfecto, False en caso contrario
         """
+        if n<2:
+            return False
+        suma=0
         for i in range(1,n):
             if n%i==0:
                 suma+=i
