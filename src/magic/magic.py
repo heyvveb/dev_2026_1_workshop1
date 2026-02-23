@@ -61,7 +61,9 @@ class Magic:
             bool: True si n es primo, False en caso contrario
         """
         p=0
-        for i in range(n+1):
+        if n<0:
+            return False
+        for i in range(1,n):
             if n%i==0:
                 p+=1
         if p==2:
