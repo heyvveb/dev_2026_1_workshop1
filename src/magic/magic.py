@@ -68,6 +68,7 @@ class Magic:
                 p+=1
         if p==2:
             return True
+        return False
         pass
     
     def generar_primos(self, n):
