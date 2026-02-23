@@ -16,6 +16,8 @@ class Magic:
         """
         numeros=[0,1]
         fibona=0
+        if n<0:
+            return None
         if n==0:
             return 0
         if n<3:
@@ -38,10 +40,10 @@ class Magic:
         """
         numeros=[0,1]
         fibona=0
+        if n==0:
+            return []
         if n==1:
-            return 0
-        if n<3:
-            return 1
+            return [0]
         for i in range(n-1):
             fibona=numeros[i]+numeros[i+1]
             numeros.append(fibona)
@@ -59,7 +61,7 @@ class Magic:
             bool: True si n es primo, False en caso contrario
         """
         p=0
-        for i in range(n):
+        for i in range(n+1):
             if n%i==0:
                 p+=1
         if p==2:
