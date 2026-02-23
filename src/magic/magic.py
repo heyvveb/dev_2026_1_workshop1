@@ -82,14 +82,13 @@ class Magic:
             list: Lista de números primos hasta n
         """
         primos=[]
-        p=0
         for j in range(2,n+1):
             p=0
             for i in range(1,j+1):
                 if j%i==0:
                     p+=1
-                if p==2:
-                    primos.append(j)
+            if p==2:
+                primos.append(j)
         return primos
 
         pass
