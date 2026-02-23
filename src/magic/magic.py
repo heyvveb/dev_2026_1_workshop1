@@ -243,14 +243,23 @@ class Magic:
             if sum(fila) != numero:
                 return False
         for col in range(n):
+            suma_col=0
             for fila in range(n):
-                if sum(matriz[fila][col]) != numero:
-                    return False
-        for i in range(n):
-            if sum(matriz[i][i])!=numero:
+                suma_col+=matriz[fila][col]
+            if suma_col != numero:
                 return False
+            
+        sum_dia1=0
         for i in range(n):
-            if sum(matriz[i][n-1-i])!=numero:
-                return False
+            sum_dia1+=matriz[i][i]
+        if sum_dia1!=numero:
+            return False
+        
+        sum_dia2=0
+        for i in range(n):
+            sum_dia2+=matriz[i][i-1-i]
+        if sum_dia2!=numero:
+            return False
+    
         return True
         pass
