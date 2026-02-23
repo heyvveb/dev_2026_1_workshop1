@@ -103,7 +103,7 @@ class Magic:
         Returns:
             bool: True si n es un número perfecto, False en caso contrario
         """
-        for i in range(n-1):
+        for i in range(1,n):
             if n%i==0:
                 suma+=i
         return suma==n
