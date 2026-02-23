@@ -44,7 +44,7 @@ class Magic:
             return []
         if n==1:
             return [0]
-        for i in range(n-1):
+        for i in range(n-2):
             fibona=numeros[i]+numeros[i+1]
             numeros.append(fibona)
         return numeros
