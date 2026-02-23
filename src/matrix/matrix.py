@@ -21,6 +21,16 @@ class Matrix:
         Ejemplo:
             suma_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[6, 8], [10, 12]]
         """
+        if len(A)!=len(B):
+            return ValueError
+
+        suma=[]
+        for i in range(len(A)):
+            fila=[]
+            for j in range(len(A[0])):
+                fila.append(A[i][j]+B[i][j])
+            suma.append(fila)
+        return suma
         pass
 
     def resta_matrices(self, A, B):
@@ -40,6 +50,16 @@ class Matrix:
         Ejemplo:
             resta_matrices([[5, 6], [7, 8]], [[1, 2], [3, 4]]) -> [[4, 4], [4, 4]]
         """
+        if len(A)!=len(B):
+            return ValueError
+
+        resta=[]
+        for i in range(len(A)):
+            fila=[]
+            for j in range(len(A[0])):
+                fila.append(A[i][j]-B[i][j])
+            resta.append(fila)
+        return resta        
         pass
 
     def multiplicar_matrices(self, A, B):
@@ -60,6 +80,19 @@ class Matrix:
         Ejemplo:
             multiplicar_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[19, 22], [43, 50]]
         """
+        if len(A)!=len(B):
+            return ValueError
+
+        multiplicación=[]
+        for i in range(len(A)):
+            fila=[]
+            for j in range(len(A[0])):
+                suma=0
+                for k in range(len(A)):
+                    suma+=A[i][k]*B[k][j]
+                fila.append(suma)
+            multiplicación.append(fila)
+        return multiplicación        
         pass
 
     def multiplicar_escalar(self, matriz, escalar):
@@ -76,6 +109,7 @@ class Matrix:
         Ejemplo:
             multiplicar_escalar([[1, 2], [3, 4]], 3) -> [[3, 6], [9, 12]]
         """
+       
         pass
 
     def transpuesta(self, matriz):
