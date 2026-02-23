@@ -146,7 +146,7 @@ class Magic:
         if n==0 or n==1:
             return 1
         for i in range(1,n):
-            fac=i*(i+1)
+            fac+=i*(i+1)
         return fac
         pass
     
