@@ -31,6 +31,7 @@ class Matrix:
                 fila.append(A[i][j]+B[i][j])
             suma.append(fila)
         return suma
+    
         pass
 
     def resta_matrices(self, A, B):
@@ -110,7 +111,7 @@ class Matrix:
             multiplicar_escalar([[1, 2], [3, 4]], 3) -> [[3, 6], [9, 12]]
         """
         
-        multiplicacion[]
+        multiplicacion=[]
         for i in range(len(matriz)):
             fila=[]
             multi=0
