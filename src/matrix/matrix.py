@@ -21,8 +21,8 @@ class Matrix:
         Ejemplo:
             suma_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[6, 8], [10, 12]]
         """
-        if len(A)!=len(B):
-            return ValueError
+        if len(A) != len(B) or len(A[0]) != len(B[0]):
+            raise ValueError()
 
         suma=[]
         for i in range(len(A)):
@@ -50,8 +50,8 @@ class Matrix:
         Ejemplo:
             resta_matrices([[5, 6], [7, 8]], [[1, 2], [3, 4]]) -> [[4, 4], [4, 4]]
         """
-        if len(A)!=len(B):
-            return ValueError
+        if len(A) != len(B) or len(A[0]) != len(B[0]):
+            return ValueError()
 
         resta=[]
         for i in range(len(A)):
@@ -80,8 +80,8 @@ class Matrix:
         Ejemplo:
             multiplicar_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[19, 22], [43, 50]]
         """
-        if len(A)!=len(B):
-            return ValueError
+        if len(A) != len(B) or len(A[0]) != len(B[0]):
+            return ValueError()
 
         multiplicación=[]
         for i in range(len(A)):
@@ -109,7 +109,17 @@ class Matrix:
         Ejemplo:
             multiplicar_escalar([[1, 2], [3, 4]], 3) -> [[3, 6], [9, 12]]
         """
-       
+        
+        multiplicacion[]
+        for i in range(len(matriz)):
+            fila=[]
+            multi=0
+            for j in range(len(matriz[0])):
+                multi=matriz[i][j]*3
+                fila.append[multi]
+            multiplicacion.append[fila]
+        
+        return multiplicacion
         pass
 
     def transpuesta(self, matriz):
