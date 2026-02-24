@@ -52,7 +52,7 @@ class Matrix:
             resta_matrices([[5, 6], [7, 8]], [[1, 2], [3, 4]]) -> [[4, 4], [4, 4]]
         """
         if len(A) != len(B) or len(A[0]) != len(B[0]):
-            return ValueError()
+            raise ValueError()
 
         resta=[]
         for i in range(len(A)):
@@ -82,7 +82,7 @@ class Matrix:
             multiplicar_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[19, 22], [43, 50]]
         """
         if len(A) != len(B) or len(A[0]) != len(B[0]):
-            return ValueError()
+            raise ValueError()
 
         multiplicación=[]
         for i in range(len(A)):
@@ -136,6 +136,14 @@ class Matrix:
         Ejemplo:
             transpuesta([[1, 2, 3], [4, 5, 6]]) -> [[1, 4], [2, 5], [3, 6]]
         """
+        transpuesta=[]
+        for j in range(len(matriz[0])):
+            fila=[]
+            for i in range(len(matriz)):
+                fila.append(matriz[i][j])
+            transpuesta.append(fila)
+        
+        return transpuesta
         pass
 
     def es_cuadrada(self, matriz):
@@ -152,6 +160,11 @@ class Matrix:
             es_cuadrada([[1, 2], [3, 4]]) -> True
             es_cuadrada([[1, 2, 3], [4, 5, 6]]) -> False
         """
+        if not matriz:
+            return False
+        if len(matriz)!= len(matriz[0]):
+            return False
+        return True
         pass
 
     def es_simetrica(self, matriz):
@@ -169,6 +182,11 @@ class Matrix:
             es_simetrica([[1, 2, 3], [2, 5, 6], [3, 6, 9]]) -> True
             es_simetrica([[1, 2], [3, 4]]) -> False
         """
+        for i in range(len(matriz)):
+            for j in range(i+1,len(matriz)):
+                if matriz[i][j]!=matriz[j][i]:
+                    return False
+        return True
         pass
 
     def traza(self, matriz):
@@ -188,6 +206,12 @@ class Matrix:
             traza([[1, 2], [3, 4]]) -> 5
             traza([[1, 0, 0], [0, 5, 0], [0, 0, 9]]) -> 15
         """
+        if len(matriz)!= len(matriz[0]):
+            raise ValueError()
+        suma=0
+        for i in range(len(matriz[0])):
+            suma+=matriz[i][i]
+        return suma    
         pass
 
     def determinante_2x2(self, matriz):
@@ -208,6 +232,10 @@ class Matrix:
             determinante_2x2([[3, 8], [4, 6]]) -> -14
             determinante_2x2([[1, 2], [3, 4]]) -> -2
         """
+        if len(matriz)!=2 and len(matriz[0])!=2:
+            raise ValueError()
+        multi=(matriz[0][0]*matriz[1][1])-(matriz[0][1]*matriz[1][0])
+        return multi
         pass
 
     def determinante_3x3(self, matriz):
@@ -227,6 +255,9 @@ class Matrix:
             determinante_3x3([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> 0
             determinante_3x3([[1, 0, 0], [0, 2, 0], [0, 0, 3]]) -> 6
         """
+        if len(matriz)!=3 or len(matriz[0])!=3:
+            raise ValueError()
+        
         pass
 
     def identidad(self, n):
