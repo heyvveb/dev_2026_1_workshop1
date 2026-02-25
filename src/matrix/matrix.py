@@ -116,7 +116,7 @@ class Matrix:
             fila=[]
             multi=0
             for j in range(len(matriz[0])):
-                multi=matriz[i][j]*3
+                multi=matriz[i][j]*escalar
                 fila.append[multi]
             multiplicacion.append[fila]
         
