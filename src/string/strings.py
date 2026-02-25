@@ -36,7 +36,7 @@ class Strings:
         """
         texto_nuevo=''
         if not texto:
-            return True
+            return ""
         for c in texto[::-1]:
             texto_nuevo+=c
         return texto_nuevo
