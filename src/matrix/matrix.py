@@ -368,7 +368,7 @@ class Matrix:
             rotar_90([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
         """
         rotada=[]
-        for j in range(len(matriz)):
+        for j in range(len(matriz[0])):
             fila=[]
             for i in range(len(matriz)-1,-1,-1):
                 fila.append(matriz[i][j])
