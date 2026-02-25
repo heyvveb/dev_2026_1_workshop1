@@ -114,11 +114,10 @@ class Matrix:
         multiplicacion=[]
         for i in range(len(matriz)):
             fila=[]
-            multi=0
             for j in range(len(matriz[0])):
                 multi=matriz[i][j]*escalar
-                fila.append[multi]
-            multiplicacion.append[fila]
+                fila.append(multi)
+            multiplicacion.append(fila)
         
         return multiplicacion
         pass
