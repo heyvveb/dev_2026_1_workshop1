@@ -397,6 +397,6 @@ class Matrix:
         for i in range(len(matriz)):
             for j in range(len(matriz)):
                     if matriz[i][j]==valor:
-                        posición.appen((i,j))
+                        posición.append((i,j))
         return posición
         pass
