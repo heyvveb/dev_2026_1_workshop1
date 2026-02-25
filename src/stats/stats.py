@@ -92,9 +92,13 @@ class Stats:
         Ejemplo:
             desviacion_estandar([1, 2, 3, 4, 5]) -> 1.41...
         """
+        if not numeros:
+            return 0
+        suma=0
         media=self.promedio(numeros)
         for i in numeros:
             suma+=(i-media)**2
+
         desviacion=(suma/len(numeros))**0.5
         return desviacion
         pass
@@ -113,6 +117,8 @@ class Stats:
         Ejemplo:
             varianza([1, 2, 3, 4, 5]) -> 2.0
         """
+        if not numeros:
+            return 0
         return self.desviacion_estandar(numeros)**2
         pass
     
