@@ -12,6 +12,8 @@ class Stats:
         Ejemplo:
             promedio([1, 2, 3, 4, 5]) -> 3.0
         """
+        if not numeros:
+            return 0
         suma=0
         n=len(numeros)
         for i in numeros:
@@ -35,12 +37,15 @@ class Stats:
             mediana([1, 2, 3, 4, 5]) -> 3.0
             mediana([1, 2, 3, 4]) -> 2.5
         """
+        if not numeros:
+            return 0
         tamaño=len(numeros)
-        mitad=tamaño/2
+        ordenados =sorted(numeros)
+        mitad=tamaño//2
         if tamaño%2==0:
-            mediana=(numeros[mitad]+numeros[mitad+1])/2
+            mediana=(numeros[mitad-1]+numeros[mitad])/2
         else:
-            mediana=numeros[mitad+0.5]
+            mediana=ordenados[mitad]
         return mediana
         pass
     
