@@ -63,6 +63,8 @@ class Stats:
         Ejemplo:
             moda([1, 2, 2, 3, 3, 3]) -> 3
         """
+        if not numeros:
+            return None
         contador= {}
         for n in numeros:
             if n in contador:
@@ -127,6 +129,8 @@ class Stats:
         Ejemplo:
             rango([1, 5, 3, 9, 2]) -> 8
         """
+        if not numeros:
+            return 0
         return max(numeros)-min(numeros)
 
         pass
