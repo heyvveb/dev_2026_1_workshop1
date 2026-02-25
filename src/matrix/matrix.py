@@ -81,15 +81,15 @@ class Matrix:
         Ejemplo:
             multiplicar_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[19, 22], [43, 50]]
         """
-        if len(A) != len(B) or len(A[0]) != len(B[0]):
+        if len(A[0]) != len(B):
             raise ValueError()
 
         multiplicación=[]
         for i in range(len(A)):
             fila=[]
-            for j in range(len(A[0])):
+            for j in range(len(B[0])):
                 suma=0
-                for k in range(len(A)):
+                for k in range(len(A[0])):
                     suma+=A[i][k]*B[k][j]
                 fila.append(suma)
             multiplicación.append(fila)
