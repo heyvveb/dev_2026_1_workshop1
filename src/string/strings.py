@@ -55,7 +55,7 @@ class Strings:
             vocal=['a','e','i','o','u']
             contador=0
             for letra in texto.lower():
-                if letra is in vocal:
+                if letra in vocal:
                     contador+=1
             return contador
             pass
@@ -137,7 +137,7 @@ class Strings:
         Returns:
             str: Cadena sin espacios duplicados
         """
-        
+
         pass
     
     def es_numero_entero(self, texto):
