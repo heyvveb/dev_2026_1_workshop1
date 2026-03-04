@@ -70,7 +70,7 @@ class Strings:
         Returns:
             int: Número de consonantes en la cadena
         """
-        conosonante=['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'ñ', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+        conosonante=['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'ñ', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
         contador=0
         for letra in texto.lower():
             if letra in conosonante:
@@ -89,9 +89,9 @@ class Strings:
         Returns:
             bool: True si son anagramas, False en caso contrario
         """
-        texto1=sorted(texto1)
-        texto2=sorted(texto2)
-        return texto1.lower==texto2.lower
+        texto1=texto1.lower()
+        texto2=texto2.lower()
+        return sorted(texto1)==sorted(texto2)
     
     def contar_palabras(self, texto):
         """
@@ -123,7 +123,7 @@ class Strings:
                 p[0].upper() + p[1:]
             else:
                 ""
-        return "".join(palabras)
+        return " ".join(palabras)
 
         pass
     
@@ -151,6 +151,10 @@ class Strings:
         Returns:
             bool: True si la cadena representa un número entero, False en caso contrario
         """
+        if texto[0] in ('-', '+'):
+            if len(texto) == 1:
+                return False
+            texto = texto[1:]
         for caracter in texto:
             if caracter < '0' or caracter > '9':
                 return False
@@ -168,6 +172,7 @@ class Strings:
         Returns:
             str: Cadena cifrada
         """
+        resultado=""
         for caracter in texto:
             if 'a' <= caracter <= 'z':
                 nueva_letra =chr((ord(caracter)-ord('a')+desplazamiento)%26 +ord('a'))
@@ -215,6 +220,9 @@ class Strings:
         Returns:
             list: Lista con las posiciones iniciales de cada ocurrencia
         """
+        if not subcadena:
+            return []
+    
         posiciones = []
         n = len(texto)
         m = len(subcadena)
