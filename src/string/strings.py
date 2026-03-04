@@ -70,7 +70,7 @@ class Strings:
         Returns:
             int: Número de consonantes en la cadena
         """
-        conosonante=['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'ñ', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
+        conosonante=['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'ñ', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
         contador=0
         for letra in texto.lower():
             if letra in conosonante:
@@ -89,8 +89,8 @@ class Strings:
         Returns:
             bool: True si son anagramas, False en caso contrario
         """
-        texto1=texto1.lower()
-        texto2=texto2.lower()
+        texto1=texto1.replace(" ","").lower()
+        texto2=texto2.replace(" ","").lower()
         return sorted(texto1)==sorted(texto2)
     
     def contar_palabras(self, texto):
@@ -117,13 +117,30 @@ class Strings:
         Returns:
             str: Cadena con la primera letra de cada palabra en mayúscula
         """
-        palabras=texto.split()
-        for p in palabras:
-            if p:
-                p[0].upper() + p[1:]
+        inicio = 0
+        while inicio < len(texto) and texto[inicio] == " ":
+            inicio += 1
+        espacios_inicio = texto[:inicio]
+
+        fin = len(texto) - 1
+        while fin >= 0 and texto[fin] == " ":
+            fin -= 1
+        espacios_fin = texto[fin+1:]
+
+        medio = texto[inicio:fin+1] if fin >= inicio else ""
+
+        resultado_medio = []
+        anterior_espacio = False
+        for c in medio:
+            if c == " ":
+                if not anterior_espacio:
+                    resultado_medio.append(c)
+                anterior_espacio = True
             else:
-                ""
-        return " ".join(palabras)
+                resultado_medio.append(c)
+                anterior_espacio = False
+        
+        return espacios_inicio + "".join(resultado_medio) + espacios_fin
 
         pass
     
