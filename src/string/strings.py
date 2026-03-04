@@ -144,30 +144,19 @@ class Strings:
         Returns:
             str: Cadena sin espacios duplicados
         """
-        inicio = 0
-        while inicio < len(texto) and texto[inicio] == " ":
-            inicio += 1
-        espacios_inicio = texto[:inicio]
-
-        fin = len(texto) - 1
-        while fin >= 0 and texto[fin] == " ":
-            fin -= 1
-        espacios_fin = texto[fin+1:]
-
-        medio = texto[inicio:fin+1] if fin >= inicio else ""
-
-        resultado_medio = []
+        resultado = []
         anterior_espacio = False
-        for c in medio:
+
+        for c in texto:
             if c == " ":
                 if not anterior_espacio:
-                    resultado_medio.append(c)
+                    resultado.append(" ")
                 anterior_espacio = True
             else:
-                resultado_medio.append(c)
+                resultado.append(c)
                 anterior_espacio = False
-        
-        return espacios_inicio + "".join(resultado_medio) + espacios_fin
+
+        return "".join(resultado)
 
         pass
     
