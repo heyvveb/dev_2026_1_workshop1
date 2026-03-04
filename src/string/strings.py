@@ -117,6 +117,33 @@ class Strings:
         Returns:
             str: Cadena con la primera letra de cada palabra en mayúscula
         """
+        resultado = []
+        nueva_palabra = True 
+
+        for c in texto:
+            if c == " ":
+                resultado.append(c)
+                nueva_palabra = True
+            else:
+                if nueva_palabra:
+                    resultado.append(c.upper())
+                    nueva_palabra = False
+                else:
+                    resultado.append(c)
+        
+        return "".join(resultado)
+        pass
+    
+    def eliminar_espacios_duplicados(self, texto):
+        """
+        Elimina espacios duplicados en una cadena.
+        
+        Args:
+            texto (str): Cadena con posibles espacios duplicados
+            
+        Returns:
+            str: Cadena sin espacios duplicados
+        """
         inicio = 0
         while inicio < len(texto) and texto[inicio] == " ":
             inicio += 1
@@ -142,20 +169,6 @@ class Strings:
         
         return espacios_inicio + "".join(resultado_medio) + espacios_fin
 
-        pass
-    
-    def eliminar_espacios_duplicados(self, texto):
-        """
-        Elimina espacios duplicados en una cadena.
-        
-        Args:
-            texto (str): Cadena con posibles espacios duplicados
-            
-        Returns:
-            str: Cadena sin espacios duplicados
-        """
-        nuevo_texto=" ".join(texto.split())
-        return nuevo_texto
         pass
     
     def es_numero_entero(self, texto):
